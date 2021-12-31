@@ -24,7 +24,7 @@ jobs:
         run: sudo snap install flutter --classic
       
       - name: Install dependencies
-        working-directory: ./asistanto
+        working-directory: /home/runner/work/asistanto/asistanto
         run: flutter pub get 
 
       - name: Verify formatting
