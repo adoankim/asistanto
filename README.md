@@ -1,4 +1,5 @@
 # Asistanto
+[![Asistanto](https://github.com/adoankim/asistanto/actions/workflows/ci.yml/badge.svg)](https://github.com/adoankim/asistanto/actions/workflows/ci.yml)
 
 Following the assistant Flutter app development from the [Boring Flutter Development show](https://www.youtube.com/playlist?list=PLjxrf2q8roU3ahJVrSgAnPjzkpGmL9Czl)
 
