@@ -24,7 +24,8 @@ jobs:
         run: sudo snap install flutter --classic
       
       - name: Install dependencies
-        run: flutter pub get
+        working-directory: ./asistanto
+        run: flutter pub get 
 
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
