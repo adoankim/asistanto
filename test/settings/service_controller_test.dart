@@ -1,5 +1,4 @@
 import 'package:asistanto/src/app.dart';
-import 'package:asistanto/src/settings/settings_service.dart';
 import 'package:asistanto/src/settings/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
