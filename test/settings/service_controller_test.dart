@@ -4,17 +4,7 @@ import 'package:asistanto/src/settings/settings_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-class FakeSettingsService with SettingsService {
-  ThemeMode _themeMode = ThemeMode.system;
-
-  @override
-  Future<ThemeMode> themeMode() async => _themeMode;
-
-  @override
-  Future<void> updateThemeMode(ThemeMode theme) async {
-    _themeMode = theme;
-  }
-}
+import 'fake_settings_service.dart';
 
 void main() {
   group("ServiceController.updateThemeMode should", () {
@@ -22,10 +12,13 @@ void main() {
       final service = FakeSettingsService();
       final controller = SettingsController(service);
       await controller.loadSettings();
-      await controller.updateThemeMode(ThemeMode.dark);
 
+      expect(controller.themeMode, ThemeMode.system);
+      expect(await service.themeMode(), ThemeMode.system);
+
+      await controller.updateThemeMode(ThemeMode.dark);
       expect(controller.themeMode, ThemeMode.dark);
-      expect(service._themeMode, ThemeMode.dark);
+      expect(await service.themeMode(), ThemeMode.dark);
     });
 
     testWidgets('inform the UI of the value', (WidgetTester tester) async {
