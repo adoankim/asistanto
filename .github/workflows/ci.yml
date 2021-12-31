@@ -25,7 +25,10 @@ jobs:
       
       - name: Install dependencies
         working-directory: /home/runner/work/asistanto/asistanto
-        run: flutter pub get 
+        run: |
+          pwd
+          ls -l
+          flutter pub get 
 
       - name: Verify formatting
         run: dart format --output=none --set-exit-if-changed .
